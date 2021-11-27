@@ -4,8 +4,19 @@ import { returnBreakpoint } from './breakpoints'
 
 export default function GlobalStyles() {
   return (
+    
     <Global
       styles={css`
+        @font-face {
+          font-display: fallback;
+          font-family: "DrukWideHeavy";
+          font-style: normal;
+          font-weight: 900;
+          font-stretch: normal;
+          src: url('https:////cdn.shopify.com/s/files/1/0544/7607/9281/t/3/assets/DrukWideHeavy.woff?v=10428527500736446426') format('woff');
+          unicode-range: U+0020-00FE;
+        }
+        
         :root {
           /* COLORS */
           --black: #000;
@@ -19,6 +30,7 @@ export default function GlobalStyles() {
           /* FONTS */
           --font-a: Helvetica, Arial, sans-serif;
           --font-b: Courier, monospace;
+          --font-c: DrukWideHeavy, sans-serif;
           
           /* SPACING */
           --base-unit: 8px;
@@ -116,6 +128,9 @@ export default function GlobalStyles() {
           padding-bottom: var(--space-sm);
           line-height: 1.35;
           font-weight: 400;
+        }
+        .hole-display {
+          font-family: var(--font-c) !important;
         }
 
         /* CUSTOM */
